@@ -116,6 +116,6 @@ app.get('/todos/done/:id', function(req, resp) {
 });
 
 // server port
-app.listen(8000, function() {
-  console.log('listening on port 8000')
+app.listen(8006, function() {
+  console.log('listening on port 8006')
 });
