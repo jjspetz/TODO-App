@@ -13,7 +13,7 @@ var pgp = require('pg-promise')({
 });
 var db = pgp({
   database: 'todo',
-  user: 'postgres'
+  user: 'jjspetz'
 })
 
 // import handlebars
