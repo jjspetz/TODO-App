@@ -77,7 +77,7 @@ app.post('/signup', function (request, response, next) {
 });
 
 // functionality for displaying todo list
-app.get('/todos', function(req, resp, next) {
+app.get('/', function(req, resp, next) {
   let query = "SELECT * FROM task WHERE user_id=$1";
   db.any(query, req.session.user)
     .then(function(results) {
