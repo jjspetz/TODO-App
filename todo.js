@@ -11,7 +11,7 @@ var promise = require('bluebird')
 var pgp = require('pg-promise')({
   promiseLib: promise
 });
-var db = pgp({database: 'todo'})
+var db = pgp({database: 'postgres'})
 
 // import handlebars
 app.set('view engine', 'hbs');
@@ -52,7 +52,7 @@ app.post('/login', function (request, response, next) {
       if(passFunc.check_pass(results.password, password)) {
         // sets user as table id for easy access later
         request.session.user = results.id;
-        response.redirect('/todos');
+        response.redirect('/');
       } else {
         response.render('login.hbs');
       }
@@ -102,7 +102,7 @@ app.get('/todos/add', function(req, resp) {
 app.post('/submit', function(req, resp) {
   db.query("INSERT INTO task (description, user_id) VALUES($1, $2)", [req.body.task, req.session.user])
     .then(function() {
-      resp.redirect('/todos');
+      resp.redirect('/');
     })
 });
 
@@ -111,7 +111,7 @@ app.get('/todos/done/:id', function(req, resp) {
   var id = req.params.id;
   db.query("UPDATE task SET done=TRUE WHERE id=$1", id)
     .then(function() {
-      resp.redirect('/todos');
+      resp.redirect('/');
     })
 });
 

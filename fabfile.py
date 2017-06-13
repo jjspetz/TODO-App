@@ -4,7 +4,7 @@ env.hosts = ['45.32.192.195']
 env.user = 'jjspetz'
 
 DIR = '/home/jjspetz/TODO-App'
-VENV = ''
+VENV = 'echo HELlO'
 # for later secrets: 'source SECRETS.ENV'
 
 def start ():
