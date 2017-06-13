@@ -1,0 +1,28 @@
+<h3>Uncompleted Tasks</h3>
+<ul id='uTask'>
+  {{#each results}}
+    {{#if done}}
+    {{else}}
+      <li>{{description}}</li>
+    {{/if}}
+  {{/each}}
+  <div id='add'>+ Add</div>
+</ul id='cTask'>
+<h3>Completed Tasks</h3>
+<ul>
+  {{#each results}}
+    {{#if done}}
+      <li>{{id}} : {{description}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
+<div class='btn' id='add_old'>Add</div>
+
+<script>
+  // event listeners
+  var addOld = document.getElementById('add_old');
+  addOld.addEventListener('click', function() {
+    window.location = '/todos/add'
+  });
+</script>
+<script src='/static/script.js'></script>

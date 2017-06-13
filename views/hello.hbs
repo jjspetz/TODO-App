@@ -1,0 +1,11 @@
+<h1>{{title}} {{name}}</h1>
+Friends:
+<ul>
+  {{#each friends}}
+  <li>{{name}}
+    {{# if age}}
+      - {{age}}
+    {{/if}}
+  </li>
+  {{/each}}
+</ul>
