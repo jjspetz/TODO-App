@@ -11,7 +11,10 @@ var promise = require('bluebird')
 var pgp = require('pg-promise')({
   promiseLib: promise
 });
-var db = pgp({database: 'todo'})
+var db = pgp({
+  database: 'todo',
+  user: 'postgres'
+})
 
 // import handlebars
 app.set('view engine', 'hbs');
